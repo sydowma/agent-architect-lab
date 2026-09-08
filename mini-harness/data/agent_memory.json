@@ -1,0 +1,20 @@
+{
+  "user_name": {
+    "key": "user_name",
+    "value": "Mark",
+    "category": "personal_info",
+    "updated_at": "2026-09-09T00:54:52.593663"
+  },
+  "user_profession": {
+    "key": "user_profession",
+    "value": "量化交易 + 底层架构开发",
+    "category": "professional",
+    "updated_at": "2026-09-09T00:54:52.594132"
+  },
+  "user_primary_languages": {
+    "key": "user_primary_languages",
+    "value": "主力语言：Python 和 C++",
+    "category": "technical_preferences",
+    "updated_at": "2026-09-09T00:54:52.594273"
+  }
+}
