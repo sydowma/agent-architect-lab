@@ -1,0 +1,40 @@
+# Environments & Secrets
+.env
+.env.local
+*.env
+venv/
+.venv/
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Logs & temporary runtimes
+*.log
+scratch/
+
+# Databases & Local Storage
+*.sqlite3
+*.db
+
+# Test Coverage & Type Checking
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Packaging & Archives
+*.tar.gz
+*.whl
