@@ -173,3 +173,9 @@ def run_command(command: str) -> str:
         return "Error: Command timed out after 15 seconds."
     except Exception as e:
         return f"Error executing shell command: {str(e)}"
+
+@default_registry.tool(description="获取系统当前时间。")
+def get_system_time() -> str:
+    """获取系统当前时间"""
+    from datetime import datetime
+    return datetime.now().isoformat()

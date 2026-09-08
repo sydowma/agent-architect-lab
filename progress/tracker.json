@@ -1,6 +1,16 @@
 {
   "target_hours": 90.0,
   "start_date": "2026-09-08",
-  "entries": [],
+  "entries": [
+    {
+      "id": 1,
+      "date": "2026-09-08",
+      "hours": 2.5,
+      "phase": 1,
+      "task": "完成 Tool Calling 协议剖析，实测本地 Qwen 3.8 27B 并手写获取系统时间工具 (get_system_time)",
+      "notes": "成功打通本地 LM Studio，理清了 JSON Schema 契约生成、工具派发与二次推理时序；亲手手写并验证了 get_system_time 工具",
+      "logged_at": "2026-09-08T23:54:44.092876"
+    }
+  ],
   "completed_milestones": []
 }
