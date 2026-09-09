@@ -37,6 +37,15 @@
       "task": "实现错误分类体系 (Taxonomy) 与异常自省自愈机制 (Self-Correction)",
       "notes": "完成 errors.py 标准分级、LLM 指数退避重试、finish_reason 协议强校验与端到端诱导踩坑自愈闭环",
       "logged_at": "2026-09-09T21:25:52.773137"
+    },
+    {
+      "id": 5,
+      "date": "2026-09-09",
+      "hours": 3.0,
+      "phase": 1,
+      "task": "Phase 1 终局收官: 交付 mini-harness v0.1 生产级微内核与动态工具掩码",
+      "notes": "实现 core.py 统一引擎、Tool Masking 物理剔除防振荡、快照原子回滚、极客终端 CLI 与全功能验收测试通过",
+      "logged_at": "2026-09-09T21:49:50.941527"
     }
   ],
   "completed_milestones": []

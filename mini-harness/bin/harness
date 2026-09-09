@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# mini-harness v0.1 CLI launcher
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export PYTHONPATH="$ROOT_DIR/src:$PYTHONPATH"
+exec python3 "$ROOT_DIR/src/cli.py" "$@"
