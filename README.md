@@ -21,13 +21,13 @@
 <!-- DASHBOARD:START -->
 ### 📊 学习进度与工时看板 (实时同步)
 
-* **总投入学时**：`2.5` / `90.0` 小时
-* **总完成进度**：`[█░░░░░░░░░░░░░░░░░░░░░░░]   2.8% (2.5h / 90.0h)`
-* **最近更新**：`2026-09-08 23:54`
+* **总投入学时**：`7.5` / `90.0` 小时
+* **总完成进度**：`[██░░░░░░░░░░░░░░░░░░░░░░]   8.3% (7.5h / 90.0h)`
+* **最近更新**：`2026-09-09 20:28`
 
 | 阶段 | 阶段主题 | 学时投入 (当前/目标) | 进度 | 状态 | 核心交付成果 |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| Phase 1 | Phase 1: 核心机制手搓 (ai-agents-from-scratch) | 2.5h / 22.0h | 11.4% | 🟡 推进中 | mini-harness v0.1 (原生 CLI ReAct 智能体) |
+| Phase 1 | Phase 1: 核心机制手搓 (ai-agents-from-scratch) | 7.5h / 22.0h | 34.1% | 🟡 推进中 | mini-harness v0.1 (原生 CLI ReAct 智能体) |
 | Phase 2 | Phase 2: 架构纵横对比 (all-agentic-architectures) | 0.0h / 24.0h | 0.0% | ⚪ 未开始 | Agent 架构横向基准评测报告 (ReAct vs PEV vs Reflection) |
 | Phase 3 | Phase 3: 工业级工程防御 (harness-books Book 1) | 0.0h / 24.0h | 0.0% | ⚪ 未开始 | mini-harness v0.2 (集成 Context Compaction + 权限中断 + 崩溃自愈) |
 | Phase 4 | Phase 4: 工业体系与方法论 (harness-books Book 2) | 0.0h / 20.0h | 0.0% | ⚪ 未开始 | mini-harness v1.0 完备版 + 《现代 AI Agent Harness 架构精要》深度长文 |

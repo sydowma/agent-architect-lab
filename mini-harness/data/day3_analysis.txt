@@ -1,0 +1,16 @@
+Day3 分析报告
+==============
+
+1. 目录文件列表 (mini-harness/data):
+   - agent_memory.json
+   - current_session.json
+
+2. agent_memory.json 事实统计:
+   事实数量: 3 个 key
+   - user_name (personal_info): Mark
+   - user_profession (professional): 量化交易 + 底层架构开发
+   - user_primary_languages (technical_preferences): 主力语言：Python 和 C++
+
+3. 内存占用计算:
+   算式: 3 * 128 = 384
+   总内存占用: 384 MB

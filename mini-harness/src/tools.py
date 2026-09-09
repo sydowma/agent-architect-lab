@@ -179,3 +179,32 @@ def get_system_time() -> str:
     """获取系统当前时间"""
     from datetime import datetime
     return datetime.now().isoformat()
+
+
+@default_registry.tool(description="安全数学表达式计算器。支持四则运算、取模、括号与基础数学运算 (如 abs, round, min, max, pow, sqrt)。")
+def calculate(expression: str) -> str:
+    """安全计算数学表达式并返回数值结果"""
+    import math
+    safe_dict = {
+        "abs": abs, "round": round, "min": min, "max": max, "pow": pow,
+        "sqrt": math.sqrt, "ceil": math.ceil, "floor": math.floor,
+        "pi": math.pi, "e": math.e
+    }
+    try:
+        cleaned = expression.strip().replace("^", "**")
+        result = eval(cleaned, {"__builtins__": {}}, safe_dict)
+        return str(result)
+    except Exception as e:
+        return f"Calculation error: {type(e).__name__} - {str(e)}"
+
+
+@default_registry.tool(description="向指定路径写入文本内容。会自动创建父目录。")
+def write_file(filepath: str, content: str) -> str:
+    """写入文件内容并返回确认消息"""
+    try:
+        os.makedirs(os.path.dirname(os.path.abspath(filepath)), exist_ok=True)
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+        return f"Successfully wrote {len(content)} characters to '{filepath}'."
+    except Exception as e:
+        return f"Error writing file '{filepath}': {str(e)}"

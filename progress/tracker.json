@@ -10,6 +10,24 @@
       "task": "完成 Tool Calling 协议剖析，实测本地 Qwen 3.8 27B 并手写获取系统时间工具 (get_system_time)",
       "notes": "成功打通本地 LM Studio，理清了 JSON Schema 契约生成、工具派发与二次推理时序；亲手手写并验证了 get_system_time 工具",
       "logged_at": "2026-09-08T23:54:44.092876"
+    },
+    {
+      "id": 2,
+      "date": "2026-09-09",
+      "hours": 2.5,
+      "phase": 1,
+      "task": "实现状态管理与双层记忆体系 (Working vs Persistent Memory)",
+      "notes": "完成 ConversationHistory 原子级滑动裁剪与 FactMemoryManager 本地持久化与开机自动注入",
+      "logged_at": "2026-09-09T20:20:55.443018"
+    },
+    {
+      "id": 3,
+      "date": "2026-09-09",
+      "hours": 2.5,
+      "phase": 1,
+      "task": "攻克 ReAct 自主驱动循环与 Loop Guard 死循环熔断器",
+      "notes": "实现 Thought->Action->Observation 闭环、ActionLoopDetector 振荡拦截与端到端 5 步自主求解",
+      "logged_at": "2026-09-09T20:28:10.788959"
     }
   ],
   "completed_milestones": []
