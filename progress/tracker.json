@@ -28,6 +28,15 @@
       "task": "攻克 ReAct 自主驱动循环与 Loop Guard 死循环熔断器",
       "notes": "实现 Thought->Action->Observation 闭环、ActionLoopDetector 振荡拦截与端到端 5 步自主求解",
       "logged_at": "2026-09-09T20:28:10.788959"
+    },
+    {
+      "id": 4,
+      "date": "2026-09-09",
+      "hours": 2.5,
+      "phase": 1,
+      "task": "实现错误分类体系 (Taxonomy) 与异常自省自愈机制 (Self-Correction)",
+      "notes": "完成 errors.py 标准分级、LLM 指数退避重试、finish_reason 协议强校验与端到端诱导踩坑自愈闭环",
+      "logged_at": "2026-09-09T21:25:52.773137"
     }
   ],
   "completed_milestones": []

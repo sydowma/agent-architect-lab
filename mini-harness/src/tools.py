@@ -69,14 +69,18 @@ class ToolDefinition:
         }
 
     def execute(self, kwargs: Dict[str, Any]) -> str:
-        """执行本地函数，捕获任何异常并转化为模型可读的错误文本"""
+        """执行本地函数，捕获任何异常并转化为模型可读的语义诊断文本"""
         try:
             res = self.fn(**kwargs)
             if isinstance(res, (dict, list)):
                 return json.dumps(res, ensure_ascii=False)
             return str(res)
         except Exception as e:
-            return f"Error executing tool '{self.name}': {type(e).__name__} - {str(e)}"
+            try:
+                from errors import classify_and_format_error
+                return classify_and_format_error(e, self.name, kwargs)
+            except Exception:
+                return f"Error executing tool '{self.name}': {type(e).__name__} - {str(e)}"
 
 
 class ToolRegistry:
@@ -126,16 +130,13 @@ default_registry = ToolRegistry()
 @default_registry.tool(description="读取本地文件内容。可指定起始行与读取最大行数。")
 def read_file(filepath: str, max_lines: int = 100) -> str:
     if not os.path.exists(filepath):
-        return f"Error: File '{filepath}' does not exist."
+        raise FileNotFoundError(f"File '{filepath}' does not exist.")
     if os.path.isdir(filepath):
-        return f"Error: '{filepath}' is a directory, not a file."
+        raise IsADirectoryError(f"'{filepath}' is a directory, not a file.")
 
-    try:
-        with open(filepath, "r", encoding="utf-8", errors="replace") as f:
-            lines = [f.readline() for _ in range(max_lines)]
-        return "".join(lines)
-    except Exception as e:
-        return f"Error reading file: {str(e)}"
+    with open(filepath, "r", encoding="utf-8", errors="replace") as f:
+        lines = [f.readline() for _ in range(max_lines)]
+    return "".join(lines)
 
 
 @default_registry.tool(description="列出指定目录下的文件和子目录。")
@@ -190,12 +191,9 @@ def calculate(expression: str) -> str:
         "sqrt": math.sqrt, "ceil": math.ceil, "floor": math.floor,
         "pi": math.pi, "e": math.e
     }
-    try:
-        cleaned = expression.strip().replace("^", "**")
-        result = eval(cleaned, {"__builtins__": {}}, safe_dict)
-        return str(result)
-    except Exception as e:
-        return f"Calculation error: {type(e).__name__} - {str(e)}"
+    cleaned = expression.strip().replace("^", "**")
+    result = eval(cleaned, {"__builtins__": {}}, safe_dict)
+    return str(result)
 
 
 @default_registry.tool(description="向指定路径写入文本内容。会自动创建父目录。")
