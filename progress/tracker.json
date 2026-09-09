@@ -82,6 +82,15 @@
       "task": "Day 11: 实现分层记忆体系 (Episodic 情景记忆 + 知识图谱 Graph Memory)",
       "notes": "手写 Python 原生 GraphMemory 邻接表与 3-hop BFS 遍历，实现 EpisodicMemory 相似度召回，打通三元组自动抽取与端到端多跳实体推理",
       "logged_at": "2026-09-09T23:24:09.484505"
+    },
+    {
+      "id": 10,
+      "date": "2026-09-10",
+      "hours": 3.0,
+      "phase": 2,
+      "task": "Day 12: 攻克动态决策流 —— Tree of Thoughts (思维树) 与 Meta Controller (架构元控制器)",
+      "notes": "手写 ToT 树搜索算子/束搜索剪枝与深度推导，构建 Meta Controller 架构多态路由总线，实现复杂任务精准动态分流与降级",
+      "logged_at": "2026-09-10T00:11:36.618903"
     }
   ],
   "completed_milestones": []
