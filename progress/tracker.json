@@ -73,6 +73,15 @@
       "task": "Day 10: 实现 Supervisor 星型中心化多智能体与 Blackboard 去中心化共享黑板协作架构",
       "notes": "手写 Supervisor 调度/安全锁/专用 Writer，复刻 HEARSAY-II 共享黑板竞标/机械仲裁与防垄断衰减，全周期规范化 dayXX_ 命名",
       "logged_at": "2026-09-09T23:14:51.052932"
+    },
+    {
+      "id": 9,
+      "date": "2026-09-09",
+      "hours": 2.5,
+      "phase": 2,
+      "task": "Day 11: 实现分层记忆体系 (Episodic 情景记忆 + 知识图谱 Graph Memory)",
+      "notes": "手写 Python 原生 GraphMemory 邻接表与 3-hop BFS 遍历，实现 EpisodicMemory 相似度召回，打通三元组自动抽取与端到端多跳实体推理",
+      "logged_at": "2026-09-09T23:24:09.484505"
     }
   ],
   "completed_milestones": []
