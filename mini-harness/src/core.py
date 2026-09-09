@@ -207,7 +207,7 @@ class HarnessEngine:
             try:
                 t0 = time.time()
                 req = urllib.request.Request(url, data=data, headers=headers, method="POST")
-                with urllib.request.urlopen(req, timeout=90) as resp:
+                with urllib.request.urlopen(req, timeout=180) as resp:
                     res = json.loads(resp.read().decode("utf-8"))
                     self.stats["total_llm_time_sec"] += (time.time() - t0)
                     return res
