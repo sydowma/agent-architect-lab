@@ -109,6 +109,15 @@
       "task": "Day 15: 攻克 Harness 哲学与 Prompt 控制面状态机 (Ch 1 & Ch 2)",
       "notes": "研读 Harness Books Ch1-2，理解模型是引擎/Harness是车身哲学；手写 PromptControlPlane 优先级链 (override>coord>agent>custom>default) 与 KV 前缀缓存边界，通过 5 项确定性单测与本地模型对齐测试",
       "logged_at": "2026-09-10T11:14:08.087730"
+    },
+    {
+      "id": 13,
+      "date": "2026-09-10",
+      "hours": 2.5,
+      "phase": 3,
+      "task": "Day 16: 攻克 Query Loop 驱动机制、心跳检查与状态机 (Ch 3)",
+      "notes": "研读 Harness Books Ch 3，理解代理系统生命周期核心；手写 QueryLoopEngine 状态机，实现前置输入治理 (Budget+Microcompact)、用户中断合成补账 (Synthetic Tool Result)、截断续写自愈与三大不变式断言，全套单测 100% 通过",
+      "logged_at": "2026-09-10T20:28:32.739034"
     }
   ],
   "completed_milestones": []

@@ -21,15 +21,15 @@
 <!-- DASHBOARD:START -->
 ### 📊 学习进度与工时看板 (实时同步)
 
-* **总投入学时**：`32.0` / `90.0` 小时
-* **总完成进度**：`[█████████░░░░░░░░░░░░░░░]  35.6% (32.0h / 90.0h)`
-* **最近更新**：`2026-09-10 11:14`
+* **总投入学时**：`34.5` / `90.0` 小时
+* **总完成进度**：`[█████████░░░░░░░░░░░░░░░]  38.3% (34.5h / 90.0h)`
+* **最近更新**：`2026-09-10 20:28`
 
 | 阶段 | 阶段主题 | 学时投入 (当前/目标) | 进度 | 状态 | 核心交付成果 |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | Phase 1 | Phase 1: 核心机制手搓 (ai-agents-from-scratch) | 13.0h / 22.0h | 59.1% | 🟡 推进中 | mini-harness v0.1 (原生 CLI ReAct 智能体) |
 | Phase 2 | Phase 2: 架构纵横对比 (all-agentic-architectures) | 16.5h / 24.0h | 68.8% | 🟡 推进中 | Agent 架构横向基准评测报告 (ReAct vs PEV vs Reflection) |
-| Phase 3 | Phase 3: 工业级工程防御 (harness-books Book 1) | 2.5h / 24.0h | 10.4% | 🟡 推进中 | mini-harness v0.2 (集成 Context Compaction + 权限中断 + 崩溃自愈) |
+| Phase 3 | Phase 3: 工业级工程防御 (harness-books Book 1) | 5.0h / 24.0h | 20.8% | 🟡 推进中 | mini-harness v0.2 (集成 Context Compaction + 权限中断 + 崩溃自愈) |
 | Phase 4 | Phase 4: 工业体系与方法论 (harness-books Book 2) | 0.0h / 20.0h | 0.0% | ⚪ 未开始 | mini-harness v1.0 完备版 + 《现代 AI Agent Harness 架构精要》深度长文 |
 <!-- DASHBOARD:END -->
 
@@ -89,7 +89,7 @@ timeline
   * **Day 15 (2.5h)**：研读 Ch 1 & Ch 2，理解“模型是引擎，Harness 是车身”以及 Prompt 作为控制面的状态机原理。
   * **Day 16 (2.5h)**：研读 Ch 3，分析 Query Loop 驱动机制与心跳检查。
   * **Day 17 (3.0h)**：研读 Ch 4，深入工具权限分级、拦截器与人在回路（HITL Interrupt）设计。
-  * **Day 18 (3.0h)**：研读 Ch 5，**攻克上下文压紧（Context Compaction）**—— 滑动窗口、记忆剪枝与结构化摘要。
+  * **Day 18 (3.0h)**：研读 Ch 5，**攻克上下文压紧（Context Compaction）**—— 滑动窗口、记忆剪枝与结构化摘要。（微专题：[大模型推理底座与前缀缓存机制](docs/03-harness-engineering/supplementary_llm_inference_and_prefix_caching.md)）
   * **Day 19 (3.0h)**：研读 Ch 6，崩溃恢复、子进程隔离与死锁熔断机制。
   * **Weekend (10.0h)**：**实操交付 `mini-harness v0.2`**。把 Compaction、权限拦截与错误自愈写入自己的 Agent，完成 50 步长链路测试。
 
