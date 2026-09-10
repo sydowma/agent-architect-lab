@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-09-10T11:10:24",
+  "model": "google/gemma-4-12b-qat",
+  "baseline": {
+    "valid_syntax": true,
+    "tests": {
+      "test_basic_operations": true,
+      "test_ttl_passive_expiration": true,
+      "test_active_cleanup_scavenger": false,
+      "test_concurrent_multithreading_safety": true,
+      "test_mutable_object_isolation": false
+    },
+    "passed": 3,
+    "total": 5,
+    "pass_rate": 0.6,
+    "error": null
+  },
+  "results": [
+    {
+      "architecture": "Direct (Single-Shot)",
+      "passed": 0,
+      "total": 5,
+      "pass_rate": 0.0,
+      "elapsed_seconds": 54.63,
+      "llm_calls": 1,
+      "total_tokens": 3711,
+      "tests_breakdown": {},
+      "error": "InMemoryCache class not found in compiled code",
+      "code_snippet": "def get(self, key: str) -> Optional[Any]:\n            with self._lock:\n                if key not in self._store:\n                    return None\n                value, expire_at = self._store[key]\n                if expire_at is not None and time.time() > expire_at:\n                    del self._st"
+    },
+    {
+      "architecture": "ReAct (Autonomous Loop)",
+      "passed": 5,
+      "total": 5,
+      "pass_rate": 1.0,
+      "elapsed_seconds": 23.39,
+      "llm_calls": 3,
+      "total_tokens": 3280,
+      "tests_breakdown": {
+        "test_basic_operations": true,
+        "test_ttl_passive_expiration": true,
+        "test_active_cleanup_scavenger": true,
+        "test_concurrent_multithreading_safety": true,
+        "test_mutable_object_isolation": true
+      },
+      "error": null,
+      "code_snippet": "class InMemoryCache:\n    \"\"\"A thread-safe in-memory cache with active expiration and deep copying.\"\"\"\n\n    def __init__(self):\n        # Fix 1: Use RLock for thread safety\n        self._lock = threading.RLock()\n        self._store: dict[str, tuple[Any, Optional[float]]] = {}\n\n    def set(self, key: "
+    },
+    {
+      "architecture": "Reflection (Dual-Role Loop)",
+      "passed": 0,
+      "total": 5,
+      "pass_rate": 0.0,
+      "elapsed_seconds": 195.1,
+      "llm_calls": 3,
+      "total_tokens": 14273,
+      "tests_breakdown": {},
+      "error": "InMemoryCache class not found in compiled code",
+      "code_snippet": ""
+    },
+    {
+      "architecture": "PEV (Plan-Execute-Verify Gate)",
+      "passed": 5,
+      "total": 5,
+      "pass_rate": 1.0,
+      "elapsed_seconds": 64.46,
+      "llm_calls": 2,
+      "total_tokens": 4060,
+      "tests_breakdown": {
+        "test_basic_operations": true,
+        "test_ttl_passive_expiration": true,
+        "test_active_cleanup_scavenger": true,
+        "test_concurrent_multithreading_safety": true,
+        "test_mutable_object_isolation": true
+      },
+      "error": null,
+      "code_snippet": "\"\"\"Refactored In-Memory Cache Module.\n\nEngineering Improvements:\n1. Thread Safety: Implemented threading.RLock to ensure atomic operations across \n   all public and internal methods, preventing race conditions.\n2. Active Cleanup: Added cleanup_expired() to proactively prune stale keys, \n   mitigatin"
+    }
+  ]
+}
