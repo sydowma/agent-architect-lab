@@ -136,6 +136,15 @@
       "task": "Day 18: 上下文压紧 (Context Compaction) 与工作语义重建",
       "notes": "研读 Harness Books Ch 5 上下文治理体系；实现 SessionMemory 结构化工作说明书、MemoryIndexManager 200行/25KB硬上限截断、ContextCompactor 受控重启与连续3次失败熔断器，全套测试 100% 通过",
       "logged_at": "2026-09-10T23:07:59.688010"
+    },
+    {
+      "id": 16,
+      "date": "2026-09-10",
+      "hours": 3.0,
+      "phase": 3,
+      "task": "Day 19: 错误自愈、分层恢复与死锁防线 (Ch 6)",
+      "notes": "研读 Harness Books Ch 6；实现可恢复错误扣留暂存机制 (Withheld Errors)、PTL 分层恢复阶梯 (Collapse -> Compact -> Surface)、切除死亡螺旋的 skipStopHooks、MOT 续写延续哲学 (无道歉/无Recap)、救火逃生舱与 Abort 账本闭合，全套单测 100% 通过",
+      "logged_at": "2026-09-10T23:49:24.393750"
     }
   ],
   "completed_milestones": []
