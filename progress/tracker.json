@@ -100,6 +100,15 @@
       "task": "Week 2 终局大结项：四大架构全景客观物理基准横评 (Direct vs ReAct vs Reflection vs PEV)",
       "notes": "完成并发内存泄漏缓存重构靶标与 5 项原生物理测试，自动化跑通全架构基准评测，实证 ReAct 敏捷排障与 PEV 规划门禁全通特性，交付综合评测与阶段复盘报告",
       "logged_at": "2026-09-10T11:11:11.729155"
+    },
+    {
+      "id": 12,
+      "date": "2026-09-10",
+      "hours": 2.5,
+      "phase": 3,
+      "task": "Day 15: 攻克 Harness 哲学与 Prompt 控制面状态机 (Ch 1 & Ch 2)",
+      "notes": "研读 Harness Books Ch1-2，理解模型是引擎/Harness是车身哲学；手写 PromptControlPlane 优先级链 (override>coord>agent>custom>default) 与 KV 前缀缓存边界，通过 5 项确定性单测与本地模型对齐测试",
+      "logged_at": "2026-09-10T11:14:08.087730"
     }
   ],
   "completed_milestones": []
