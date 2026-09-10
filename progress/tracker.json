@@ -127,6 +127,15 @@
       "task": "Day 17: 攻克工具受管调度、三态权限模型与人在回路 HITL (Ch 4)",
       "notes": "研读 Harness Books Ch 4，掌握工具受管接口哲学；实现并发安全分组 (partitionToolCalls)、顺序上下文回放、三态权限 (ALLOW/DENY/ASK)、Sticky Deny 粘性拒绝防试探与 SafeBashGuard 深度防线，5 项硬核单测 100% 通过",
       "logged_at": "2026-09-10T22:54:19.418467"
+    },
+    {
+      "id": 15,
+      "date": "2026-09-10",
+      "hours": 3.0,
+      "phase": 3,
+      "task": "Day 18: 上下文压紧 (Context Compaction) 与工作语义重建",
+      "notes": "研读 Harness Books Ch 5 上下文治理体系；实现 SessionMemory 结构化工作说明书、MemoryIndexManager 200行/25KB硬上限截断、ContextCompactor 受控重启与连续3次失败熔断器，全套测试 100% 通过",
+      "logged_at": "2026-09-10T23:07:59.688010"
     }
   ],
   "completed_milestones": []
