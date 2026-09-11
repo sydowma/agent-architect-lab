@@ -101,7 +101,7 @@ timeline
 * **主攻项目**：[harness-books Book 2](https://github.com/wquguru/harness-books/tree/main/book2-comparing)
 * **每日排期**：
   * **Day 22 (2.5h)**：Claude Code、Codex 与 Pi 的控制面与执行线程对比（Loop, Thread, Rollout vs 极简 Harness）。
-  * **Day 23 (2.5h)**：安全沙箱（Sandbox）与本地治理策略（Local Governance）。
+  * **Day 23 (2.5h)**：**安全沙箱（Sandbox）与本地治理策略（Local Governance）**。研读沙箱治理哲学与工业级沙箱拓扑；攻关开源沙箱生态（E2B MicroVM、Daytona 工作区管理与本地受控 Docker）；掌握反向长连接通信、双密钥隔离与 JIT 按需冷启动生命周期。（微专题：[开源沙箱提供商与执行运行时选型指南](docs/03-harness-engineering/supplementary_open_source_sandboxes.md)）
   * **Day 24 (2.5h)**：Skills 动态挂载机制与委托执行（Delegation & State）。
   * **Day 25 (2.5h)**：收敛与分歧：未来生产级 Agent 的架构演化共识（全功能重型 Harness vs 极简微内核）。
   * **Weekend (10.0h)**：**双重收尾交付**：
