@@ -11,25 +11,28 @@
 * **周末投入**：4.0 ~ 5.0 小时 / 天
 * **每周总学时**：**20 ~ 25 小时**
 * **总冲刺周期**：4 周（目标累计 **90 小时**）
-* **三大底座参考项目**：
-  1. [ai-agents-from-scratch](https://github.com/pguso/ai-agents-from-scratch)：零依赖原生手搓骨架
-  2. [all-agentic-architectures](https://github.com/FareedKhan-dev/all-agentic-architectures)：35 种 Agent 架构全景与对比
-  3. [harness-books](https://github.com/wquguru/harness-books)：Claude Code & Codex 工业级架构与工程防御
+* **四大底座与拓展参考项目**：
+  1. [ai-agents-from-scratch](https://github.com/pguso/ai-agents-from-scratch)：零依赖原生手搓骨架 (Phase 1)
+  2. [all-agentic-architectures](https://github.com/FareedKhan-dev/all-agentic-architectures)：35 种 Agent 架构全景与对比 (Phase 2)
+  3. [harness-books](https://github.com/wquguru/harness-books)：Claude Code & Codex 工业级架构与工程防御 (Phase 3 & 4)
+  4. [designing-multiagent-systems](https://github.com/victordibia/designing-multiagent-systems)：Victor Dibia 教学型多智能体系统与 PicoAgents 架构 (Phase 5 拓展)
+* **工业文献与极简架构对照**：
+  * [pi-bluebook](https://github.com/xiaomoBoy/pi-bluebook)（Pi 学习蓝皮书 / Earendil 官方授权译文集）：Mario Zechner 极简开源 Agent Harness (Pi) 实践，收录《什么是 Harness》、《Agent 中的提示缓存》、《Pi 中的压缩机制》、《会话可移植性》等核心文献，作为 Claude Code / Codex 之外的“第三极”极简微内核架构对照。
 
 ---
 
 <!-- DASHBOARD:START -->
 ### 📊 学习进度与工时看板 (实时同步)
 
-* **总投入学时**：`43.5` / `90.0` 小时
-* **总完成进度**：`[████████████░░░░░░░░░░░░]  48.3% (43.5h / 90.0h)`
-* **最近更新**：`2026-09-10 23:49`
+* **总投入学时**：`46.5` / `90.0` 小时
+* **总完成进度**：`[████████████░░░░░░░░░░░░]  51.7% (46.5h / 90.0h)`
+* **最近更新**：`2026-09-11 14:05`
 
 | 阶段 | 阶段主题 | 学时投入 (当前/目标) | 进度 | 状态 | 核心交付成果 |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | Phase 1 | Phase 1: 核心机制手搓 (ai-agents-from-scratch) | 13.0h / 22.0h | 59.1% | 🟡 推进中 | mini-harness v0.1 (原生 CLI ReAct 智能体) |
 | Phase 2 | Phase 2: 架构纵横对比 (all-agentic-architectures) | 16.5h / 24.0h | 68.8% | 🟡 推进中 | Agent 架构横向基准评测报告 (ReAct vs PEV vs Reflection) |
-| Phase 3 | Phase 3: 工业级工程防御 (harness-books Book 1) | 14.0h / 24.0h | 58.3% | 🟡 推进中 | mini-harness v0.2 (集成 Context Compaction + 权限中断 + 崩溃自愈) |
+| Phase 3 | Phase 3: 工业级工程防御 (harness-books Book 1) | 17.0h / 24.0h | 70.8% | 🟡 推进中 | mini-harness v0.2 (集成 Context Compaction + 权限中断 + 崩溃自愈) |
 | Phase 4 | Phase 4: 工业体系与方法论 (harness-books Book 2) | 0.0h / 20.0h | 0.0% | ⚪ 未开始 | mini-harness v1.0 完备版 + 《现代 AI Agent Harness 架构精要》深度长文 |
 <!-- DASHBOARD:END -->
 
@@ -56,11 +59,12 @@ python3 scripts/tracker.py report
 
 ```mermaid
 timeline
-    title 90 小时高强度冲刺全景
+    title 90 小时高强度冲刺全景（含进阶拓展）
     Week 1 (22h) : 基础模型协议 : Tool Call 原生解析 : ReAct 驱动循环 : 交付 mini-harness v0.1
     Week 2 (24h) : Reflection 反思模式 : Plan-and-Solve 架构 : 多 Agent 与黑板模式 : 交付 架构横评报告
     Week 3 (24h) : Claude Code 控制面 : Context 压缩裁剪 : 权限与 HITL 人在回路 : 交付 mini-harness v0.2
     Week 4 (20h) : 沙箱与执行策略 : Skills 动态扩展 : 边界防御体系 : 交付 mini-harness v1.0 & 架构长文
+    Phase 5 (Post) : PicoAgents 架构解构 : GroupChat 与动态路由 : Magentic-One 规划 : 交付 mini-harness v2.0 (多 Agent)
 ```
 
 ### 📅 Week 1: 穿透底层齿轮 —— 手搓核心循环 (目标: 22h)
@@ -89,20 +93,38 @@ timeline
   * **Day 15 (2.5h)**：研读 Ch 1 & Ch 2，理解“模型是引擎，Harness 是车身”以及 Prompt 作为控制面的状态机原理。
   * **Day 16 (2.5h)**：研读 Ch 3，分析 Query Loop 驱动机制与心跳检查。
   * **Day 17 (3.0h)**：研读 Ch 4，深入工具权限分级、拦截器与人在回路（HITL Interrupt）设计。
-  * **Day 18 (3.0h)**：研读 Ch 5，**攻克上下文压紧（Context Compaction）**—— 滑动窗口、记忆剪枝与结构化摘要。（微专题：[大模型推理底座与前缀缓存机制](docs/03-harness-engineering/supplementary_llm_inference_and_prefix_caching.md)）
+  * **Day 18 (3.0h)**：研读 Ch 5，**攻克上下文压紧（Context Compaction）**—— 滑动窗口、记忆剪枝与结构化摘要。（微专题：[大模型推理底座与前缀缓存机制](docs/03-harness-engineering/supplementary_llm_inference_and_prefix_caching.md)；架构对照：[Pi 压缩机制与提示缓存](https://github.com/xiaomoBoy/pi-bluebook/blob/main/docs/translations/compaction-in-pi.md)）
   * **Day 19 (3.0h)**：研读 Ch 6，崩溃恢复、子进程隔离与死锁熔断机制。
   * **Weekend (10.0h)**：**实操交付 `mini-harness v0.2`**。把 Compaction、权限拦截与错误自愈写入自己的 Agent，完成 50 步长链路测试。
 
 ### 📅 Week 4: 体系沉淀 —— 架构分歧与工业总结 (目标: 20h)
 * **主攻项目**：[harness-books Book 2](https://github.com/wquguru/harness-books/tree/main/book2-comparing)
 * **每日排期**：
-  * **Day 22 (2.5h)**：Claude Code 与 Codex 的控制面与执行线程对比（Loop, Thread & Rollout）。
+  * **Day 22 (2.5h)**：Claude Code、Codex 与 Pi 的控制面与执行线程对比（Loop, Thread, Rollout vs 极简 Harness）。
   * **Day 23 (2.5h)**：安全沙箱（Sandbox）与本地治理策略（Local Governance）。
   * **Day 24 (2.5h)**：Skills 动态挂载机制与委托执行（Delegation & State）。
-  * **Day 25 (2.5h)**：收敛与分歧：未来生产级 Agent 的架构演化共识。
+  * **Day 25 (2.5h)**：收敛与分歧：未来生产级 Agent 的架构演化共识（全功能重型 Harness vs 极简微内核）。
   * **Weekend (10.0h)**：**双重收尾交付**：
     1. 发布 **`mini-harness v1.0`**（支持 Skills 插件化、完备测试、CLI 文档）；
     2. 撰写 **《解密现代 AI Coding Agent 的 Harness 架构》** 深度工程长文。
+
+### 🚀 进阶拓展 / Phase 5: 复杂多智能体协同与生产编排专项 (Post-90h)
+* **主攻项目**：[designing-multiagent-systems](https://github.com/victordibia/designing-multiagent-systems) (Victor Dibia / 《Designing Multi-Agent Systems》配套代码库)
+* **核心定位**：在完成单体 Coding Agent（`mini-harness v1.0`）与 Harness 架构防御的基础上，进阶攻坚多智能体编排引擎、协同通讯范式与生产级评测体系。
+* **进阶专题拆解**：
+  * **专题 1：PicoAgents 教学级微内核解构**：研读 `picoagents/src/picoagents/`，理清零黑盒依赖的 Agent Loop、Memory、Middleware 中间件与 Streaming 管道。
+  * **专题 2：多智能体协作与编排范式**：
+    * **静态工作流**：研读 `picoagents/workflow/`，实现基于类型安全的 DAG 任务流与事件驱动编排；
+    * **动态协同**：攻关 GroupChat 轮询 (`round-robin.py`)、LLM 驱动决策路由 (`ai-driven.py`)；
+    * **规划驱动**：攻关 Magentic-One 规划与动态重规划范式 (`plan-based.py`)。
+  * **专题 3：生产要素与协议生态**：
+    * 接入 MCP 2.0 (Model Context Protocol) 客户端与工具发现规范；
+    * 探索 Playwright / Computer Use 多模态浏览器环境操作。
+  * **专题 4：量化评测体系 (LLM-as-Judge)**：落地 `picoagents/eval/` 评测框架，对多智能体长链路协作进行自动化评分与 Token/耗时归因。
+  * **专题 5：跨框架横向映射 (Cross-Framework)**：对照 `examples/frameworks/` 中 LangGraph、Microsoft Agent Framework 与 Google ADK 的实现异同，沉淀企业级架构选型决策矩阵。
+* **最终拓展交付物**：
+  1. **发布 `mini-harness v2.0`**：支持 Subagent 团队化派发、动态协作编排与 MCP 工具协议；
+  2. **撰写《生产级 Multi-Agent 编排与架构模式深度指南》** 架构复盘长文。
 
 ---
 

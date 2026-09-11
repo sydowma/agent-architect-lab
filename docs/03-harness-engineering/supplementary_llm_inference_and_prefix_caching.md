@@ -26,6 +26,12 @@
 | **④ 调度与长短争用** | [vLLM: Chunked Prefill & Preemption](https://docs.vllm.ai/en/latest/configuration/optimization/) | 显存告急时的抢占（Preemption）策略；**Chunked Prefill（分块预填充）** 将长请求切片与 Decode 交错打碎调度，防止超长 Prompt 独占 GPU 计算单元。 |
 | **⑤ 真实延迟度量指标** | [vLLM: Benchmarking CLI](https://docs.vllm.ai/en/latest/benchmarking/cli/) | **TTFT**（首字延迟）、**ITL**（逐字流式输出间隔）、**TPOT**（除首 token 外的平均吐字耗时）。 |
 | **⑥ 真实 Agent 工作负载** | [Mooncake FAST '25 Trace Release](https://github.com/kvcache-ai/Mooncake/blob/main/FAST25-release/README.md) | 月之暗面公开的生产环境 Trace（含 `traces/toolagent_trace.jsonl`，23,608 请求，平均输入 8,596 tokens，平均输出 182 tokens，以 512 为块的前缀 Hash 链）。 |
+| **⑦ Harness 缓存与压缩实战** | [Pi 蓝皮书 / Earendil 授权译文](https://github.com/xiaomoBoy/pi-bluebook/tree/main/docs/translations) | 来自极简开源 Harness (Pi by Mario Zechner) 的第一手剖析：解释为何提示缓存是脆弱的抽象，以及 Compaction 压缩为何会强制重置 KV 缓存。 |
+
+### 📚 工业级 Harness 推荐研读文献 (源自 pi-bluebook 授权译文集)
+- **[Agent 中的提示缓存 (Prompt Caching In Agents)](https://github.com/xiaomoBoy/pi-bluebook/blob/main/docs/translations/prompt-caching.md)**：深入分析 KV 缓存前缀匹配、会话亲和性（Session Affinity）、工具定义变化导致的缓存击穿与单轮成本剧增。
+- **[Pi 中的压缩机制 (How Compaction Works in Pi)](https://github.com/xiaomoBoy/pi-bluebook/blob/main/docs/translations/compaction-in-pi.md)**：详细拆解长对话到达阈值时如何触发压缩、交接摘要（Hand-off summary）的生成机制，以及 Compaction 如何重置后续请求的缓存状态。
+- **[什么是 Agent Harness？(What is a Harness?)](https://github.com/xiaomoBoy/pi-bluebook/blob/main/docs/translations/what-is-a-harness.md)**：借用攀岩安全带的生动隐喻，阐明 Harness 作为模型运行环境与控制面的核心职责。
 
 ---
 
