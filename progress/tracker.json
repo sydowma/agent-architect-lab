@@ -172,6 +172,105 @@
       "task": "Day 22: 双雄对决：Claude Code vs Codex 架构哲学与控制面对比 (Book 2 Ch 1 & 2)",
       "notes": "研读 Harness Books Book 2 Ch 1 & 2，掌握不信任模型的两大驯化路线（运行时优先 vs 显式控制面优先）；实现 Claude Code 风格动态装配线与 Codex 风格强类型 Contextual Fragment 片段包裹；实现 AGENTS.md 目录层级继承与单调优先级检查，全套单测 100% 通过",
       "logged_at": "2026-09-11T14:35:43.095531"
+    },
+    {
+      "id": 20,
+      "date": "2026-09-15",
+      "hours": 2.5,
+      "phase": 4,
+      "task": "Day 23: 隔离之锁 —— 安全沙箱 (Sandbox) 与本地执行治理策略 (Book 2 Ch 3)",
+      "notes": "研读 Harness Books Book 2 Ch 3 与 OpenAI Self-hosted Sandbox 规范；实现 BaseExecutionSandbox 契约、三道硬红线策略 (network=none / memory=256m / pids=64)、双密钥降权中间人 (主密钥零泄漏, 仅下发作用域 EXECUTOR_KEY)、纯出网反向 WSS 连接契约、LocalDockerSandbox 驱动、Session/Compute 解耦的 JIT 懒加载与空闲快照回收、结果不变式强校验；新增沙箱开销剖析器实测冷启动 132ms/热执行 32ms, JIT 摊销后单轮仅 +36ms, 全套 9 项单测 (含真实 Docker 隔离验证) 与既有回归 100% 通过",
+      "logged_at": "2026-09-15T00:32:53.797835"
+    },
+    {
+      "id": 21,
+      "date": "2026-09-15",
+      "hours": 2.5,
+      "phase": 4,
+      "task": "Day 24: 技能挂载、Hook 生命周期与工具化委派 (Skills, Hooks & Delegation) (Book 2 Ch 5 & 6)",
+      "notes": "研读 Harness Books Book 2 Ch 5 & 6，掌握两条本地治理路线（Claude Code 现场记忆 vs Codex 结构化制度）；实现 Skill 指纹安装与跳过机制 (install/reinstalled/skipped_fingerprint_match) 与 project>user>system 作用域优先级、SkillRuntime 按需注入；实现 Hook 生命周期事件引擎 (session_start/user_prompt_submit/pre_tool_use/post_tool_use/stop) 与 preview_* vs run_* 双路径、matcher/timeout/display_order 审计元数据、Windows 平台能力可解释门控与事件顺序不变式；实现 Codex 风格工具化委派协议 spawn/send_input(interrupt|queue)/wait_agent(min|default|max 超时钳制)/close_agent(cascade 级联) 与父子 abort 传播、无悬挂句柄不变式；引入 DelegationLedger 持久证据让独立验证有据可查；全套 12 项单测与既有回归 100% 通过",
+      "logged_at": "2026-09-15T00:35:04.467908"
+    },
+    {
+      "id": 22,
+      "date": "2026-09-16",
+      "hours": 2.5,
+      "phase": 4,
+      "task": "Day 25: 收敛与分歧：未来生产级 Agent 架构演化共识（全功能重型 Harness vs 极简微内核）",
+      "notes": "深入剖析 Claude Code、Codex 与 Pi (极简微内核) 三大架构谱系；提炼五大收敛共识 (零信任模型、提示缓存前缀纪律、循环双向账本闭合、显式语义锚点压紧、物理沙箱隔离) 与三大分歧 (会话流/快照、规则扩展、微内核/全包重型)；实现 PrefixCacheDisciplineValidator 提示缓存前缀漂移守卫、SessionPortabilityEngine 跨架构会话互转与 DAG 分支引擎、SyntheticLedgerInvariants 协议补账闭合与 ArchitectureDecisionAdvisor 生产选型求解器；全套 13 项单元测试与既有回归 100% 通过",
+      "logged_at": "2026-09-16T23:11:57.170985"
+    },
+    {
+      "id": 23,
+      "date": "2026-09-17",
+      "hours": 5.0,
+      "phase": 4,
+      "task": "Week 4 终局大结项：发布 mini-harness v1.0 工业完备版与《解密现代 AI Coding Agent 的 Harness 架构》深度长文",
+      "notes": "整合 Phase 1-4 全部核心子系统，发布 mini-harness v1.0 工业完备版，完成全新 CLI 终端交互控制台与端到端自动化验收测试；撰写发布顶层架构万字长文《解密现代 AI Coding Agent 的 Harness 架构：从裸奔模型到工业级防御体系》；全套 48 项单元与集成测试 100% 绿灯通过",
+      "logged_at": "2026-09-17T22:39:24.257055"
+    },
+    {
+      "id": 24,
+      "date": "2026-09-17",
+      "hours": 2.5,
+      "phase": 5,
+      "task": "Phase 5 专题 1: PicoAgents 教学级微内核解构与多智能体流式中间件总线",
+      "notes": "研读 Victor Dibia《Designing Multi-Agent Systems》PicoAgents 架构；手搓落地 AgentStreamChunk 流式 Token 分块与 AgentMessage 类型化契约；实现 PicoMiddleware 洋葱流水线 (TokenBudgetMiddleware 熔断, StreamingLogMiddleware 实时采集, ContextInjectMiddleware 知识注入)；实现 PicoAgent 纯流式执行体与 MultiAgentBus 广播与 P2P 协作消息总线；全套 6 项单元测试 100% 绿灯通过",
+      "logged_at": "2026-09-17T23:14:14.138788"
+    },
+    {
+      "id": 25,
+      "date": "2026-09-19",
+      "hours": 3.0,
+      "phase": 5,
+      "task": "Phase 5 专题 2: 多智能体协作与编排范式 (静态 DAG、动态 GroupChat 与 Magentic-One 规划驱动)",
+      "notes": "手搓静态 DAG 工作流 (拓扑排序与 Kahn 算法环路死锁阻断)；实现动态 GroupChat 圆桌协作 (RoundRobin 与 AI-Driven 决策路由、收敛终止门禁)；实现微软 Magentic-One 双循环架构与失败动态重规划 (Dynamic Replanning)；全套单元测试 100% 绿灯通过",
+      "logged_at": "2026-09-19T01:07:28.623425"
+    },
+    {
+      "id": 26,
+      "date": "2026-09-23",
+      "hours": 3.0,
+      "phase": 5,
+      "task": "Phase 5 专题 3: MCP 2.0 工业协议生态与工具动态发现 (含多模态浏览器仿真)",
+      "notes": "解构 Model Context Protocol (MCP 2.0) 工业标准；手搓零依赖 JSON-RPC 2.0 报文协议栈与双向 Transport (InMemoryDuplex & SubprocessStdio)；实现 Client/Server 能力握手协商、工具与资源动态发现 (tools/list, resources/read)；实现 tools/list_changed 动态热插拔通知监听与缓存自愈；交付 MCPBrowserServer (Playwright/Computer Use 多模态仿真) 及 PicoMCPBridge；8/8 单元测试与 34/34 全回归绿灯通过",
+      "logged_at": "2026-09-23T14:13:06.191611"
+    },
+    {
+      "id": 27,
+      "date": "2026-09-24",
+      "hours": 3.0,
+      "phase": 5,
+      "task": "Agent系统后端架构专项: 沙箱运行时生命周期(一) - OverlayFS预热池与COW秒级重置",
+      "notes": "落地深度架构文档01; 实现OverlayFS联合文件系统驱动与跨平台透明仿真层; 打造StandbySandboxPoolManager状态机支持原子CAS抢占与Sub-50ms极速借出; 实现ActionDiff文件变更审计与秒级COW重置复位; 注入Cgroups v2 pids.max防Fork炸弹与OOM整组联杀规约; 8/8单元测试全绿通过，全库106测试零回归",
+      "logged_at": "2026-09-24T23:13:51.422204"
+    },
+    {
+      "id": 28,
+      "date": "2026-09-24",
+      "hours": 2.5,
+      "phase": 5,
+      "task": "Agent系统后端架构专项: 沙箱运行时生命周期(二) - X11 MIT-SHM零拷贝截屏与/dev/uinput内核事件注入",
+      "notes": "落地深度架构文档02; 攻破X11 Socket传输8MB大帧延迟瓶颈，实现MIT-SHM物理内存直接指针解引用与<8ms零拷贝截屏; 实现DPI缩放矩阵转换(含1000格坐标与物理像素互转)及三次贝塞尔平滑轨迹生成算法; 实现基于/dev/uinput协议的硬件级虚拟键盘鼠标驱动及EV_SYN原子事件流保障; 交付aegis-sandbox/src/display.py及8/8单元测试，项目总测试达27/27全绿",
+      "logged_at": "2026-09-24T23:28:54.253449"
+    },
+    {
+      "id": 29,
+      "date": "2026-09-24",
+      "hours": 3.0,
+      "phase": 5,
+      "task": "Agent系统后端架构专项: 分布式状态机 - Temporal.io长程任务确定性重放与HITL抢占",
+      "notes": "落地深度架构文档03; 手搓EventStore不可变事件流与确定性重放引擎，实现Worker崩溃重启零重复Token消耗; 实现Saga逆向补偿协调器(LIFO)与沙箱Checkpoint状态回滚; 实现原生HITL信号通道(TakeoverSignal挂起、ResumeSignal恢复与InterventionSignal动态指令纠偏); 交付aegis-sandbox/src/workflow.py，测试套件7/7全绿，aegis-sandbox总测试达34/34全绿，全库151测试零回归",
+      "logged_at": "2026-09-24T23:32:58.555977"
+    },
+    {
+      "id": 30,
+      "date": "2026-09-25",
+      "hours": 3.0,
+      "phase": 5,
+      "task": "Phase 5 专题 4: 多智能体协作量化评测体系 (LLM-as-Judge & Eval Framework)",
+      "notes": "构建多智能体四维量化评测体系 (任务达成度、协作冗余度、算力耗时归因、自愈鲁棒性)；手搓零依赖 MultiAgentTelemetryTracker 精准捕捉 Per-Agent Token 与耗时占比；实现结构化量规评定引擎 LLMAsJudge 与对偶互换评测法 (Swap Evaluation) 消除模型位置偏置；落地拓扑消融对比并导出格式化 BenchmarkReport 矩阵；6/6 专题测试与 40/40 全回归测试 100% 绿灯通过",
+      "logged_at": "2026-09-25T00:05:57.454196"
     }
   ],
   "completed_milestones": []

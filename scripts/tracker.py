@@ -18,7 +18,7 @@ TRACKER_FILE = os.path.join(REPO_ROOT, "progress", "tracker.json")
 DAILY_DIR = os.path.join(REPO_ROOT, "progress", "daily_logs")
 README_FILE = os.path.join(REPO_ROOT, "README.md")
 
-TARGET_HOURS = 90.0
+TARGET_HOURS = 115.0
 
 PHASES = {
     1: {
@@ -40,6 +40,11 @@ PHASES = {
         "title": "Phase 4: 工业体系与方法论 (harness-books Book 2)",
         "target_hours": 20.0,
         "deliverable": "mini-harness v1.0 完备版 + 《现代 AI Agent Harness 架构精要》深度长文"
+    },
+    5: {
+        "title": "Phase 5: 复杂多智能体协同与生产编排专项 (Post-90h)",
+        "target_hours": 25.0,
+        "deliverable": "mini-harness v2.0 (多 Agent 团队版) + 生产编排深度指南"
     }
 }
 
@@ -258,7 +263,7 @@ def main():
     log_parser = subparsers.add_parser("log", help="记录学习时间与任务")
     log_parser.add_argument("--hours", type=float, required=True, help="投入时长(小时，如 2.5)")
     log_parser.add_argument("--task", type=str, required=True, help="完成的学习/开发任务")
-    log_parser.add_argument("--phase", type=int, choices=[1, 2, 3, 4], default=1, help="所属阶段(1-4)")
+    log_parser.add_argument("--phase", type=int, choices=[1, 2, 3, 4, 5], default=1, help="所属阶段(1-5)")
     log_parser.add_argument("--notes", type=str, default="", help="收获、心得或问题点")
     log_parser.add_argument("--date", type=str, default=None, help="指定日期 (YYYY-MM-DD)，默认今天")
 

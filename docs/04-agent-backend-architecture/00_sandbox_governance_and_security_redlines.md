@@ -1,8 +1,8 @@
-# Day 23: 隔离之锁：安全沙箱（Sandbox）与本地执行治理策略
+# 专题 00：隔离之锁：安全沙箱（Sandbox）与本地执行治理策略
 
-> **学习模块**：Week 4 工业体系与方法论 (Harness Books Book 2: Local Governance & Sandboxes)  
+> **所属模块**：Agent 后端架构专项 · 执行治理与安全红线  
 > **核心参考**：`harness-books/book2-comparing` 第 3 章（沙箱治理）；OpenAI Agents API Self-hosted Sandboxes 架构规范；[微专题：开源沙箱提供商与执行运行时选型指南](file:///Users/mark/GitHub/agent-architect-lab/docs/03-harness-engineering/supplementary_open_source_sandboxes.md)  
-> **源码对应**：[day23_sandbox_executor.py](file:///Users/mark/GitHub/agent-architect-lab/mini-harness/src/day23_sandbox_executor.py) | [day23_test.py](file:///Users/mark/GitHub/agent-architect-lab/mini-harness/src/day23_test.py)  
+> **源码对应**：[`aegis-sandbox/src/executor.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/executor.py) | [`aegis-sandbox/tests/test_executor.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/tests/test_executor.py)  
 
 ---
 
