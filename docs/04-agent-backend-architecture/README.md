@@ -12,7 +12,8 @@
 | **专题 00** | [隔离之锁：安全沙箱与本地执行治理策略](./00_sandbox_governance_and_security_redlines.md) | 🟢 已交付 | [`aegis-sandbox/src/executor.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/executor.py) |
 | **专题 01** | [沙箱运行时生命周期（一）：OverlayFS 预热池与 COW 秒级重置](./01_sandbox_prewarming_and_overlayfs_cow.md) | 🟢 已交付 | [`aegis-sandbox/src/pool.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/pool.py) |
 | **专题 02** | [沙箱运行时生命周期（二）：X11 MIT-SHM 零拷贝截屏与 /dev/uinput 输入注入](./02_x11_mit_shm_capture_and_uinput_injection.md) | 🟢 已交付 | [`aegis-sandbox/src/display.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/display.py) |
-| **专题 03** | [分布式状态机：基于 Temporal.io 的长程任务重放与 Human-in-the-Loop 中断](./03_temporal_workflow_and_hitl.md) | 🟢 已交付 | [`aegis-sandbox/src/workflow.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/workflow.py) |
+| **专题 03** | [分布式状态机：基于 Temporal.io 的长程任务重放与 Human-in-the-Loop 中断](./03_temporal_workflow_and_event_sourcing_state_machine.md) | 🟢 已交付 | [`aegis-sandbox/src/orchestrator.py`](file:///Users/mark/GitHub/agent-architect-lab/aegis-sandbox/src/orchestrator.py) |
+| **专题 04** | MCP 2.0 服务化治理与高性能双向流式工具调用总线 | 🟡 即将开启 | 规划中 |
 
 ---
 

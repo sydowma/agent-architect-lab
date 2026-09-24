@@ -239,7 +239,6 @@ class EventSourcedAgentWorkflowEngine:
                 payload={"error": str(e)},
             )
             self.rollback_saga()
-            self.status = WorkflowStatus.FAILED
             raise e
 
     def await_approval_or_takeover(
